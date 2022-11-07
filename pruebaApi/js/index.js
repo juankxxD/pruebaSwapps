@@ -22,6 +22,7 @@ $form.addEventListener("submit", (e) => {
     const author = $author.value.trim().replace(regex, "+");
     api += `author=${author}`;
   }
+  offset = 0;
   httpFetch();
 });
 
@@ -34,9 +35,13 @@ function httpFetch() {
         let html = '';
         for (let i = 0; i < data.docs.length; i++) {
           html += `
-          <h2>${data.docs[i].title}</h2>
-          <h3>${data.docs[i].author_name}</h3>
-          <img src='http://covers.openlibrary.org/b/isbn/${data.docs[i].isbn[0]}-M.jpg'/>`;
+          <div class='container-cards'>
+          <img src='http://covers.openlibrary.org/b/isbn/${data.docs[i].isbn[0]}-M.jpg'/>
+          <div class='container-info-card'>
+            <h2><span>Title: </span> ${data.docs[i].title}</h2>
+            <h3><span>Author: </span> ${data.docs[i].author_name}</h3>
+          </div>
+          </div>`;
         }
         console.log(html)
         $containerInfo.innerHTML = html;

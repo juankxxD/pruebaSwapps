@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +9,24 @@
   <title>API usage test</title>
   <script async src="js/index.js"></script>
 </head>
+
 <body>
   <form>
-    <label for="book">Book</label>
-    <input type="text" name="book" id="book"/>
-    <label for="author">Author</label>
-    <input type="text" name="author" id="author"/>
+    <div>
+      <label for="book">Book</label>
+      <input type="text" name="book" id="book" />
+    </div>
+    <div>
+      <label for="author">Author</label>
+      <input type="text" name="author" id="author" />
+    </div>
     <input type="submit" value="search" />
   </form>
   <div class="container-info"></div>
   <div class="container-btns">
-    <button id="btn-next">Next</button>
     <button id="btn-back">Back</button>
+    <button id="btn-next">Next</button>
   </div>
 </body>
+
 </html>
